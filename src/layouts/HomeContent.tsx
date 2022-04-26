@@ -4,12 +4,7 @@ import { Link } from 'react-router-dom';
 
 const HomeContent: React.FC = () => {
     return (
-      <div className="w-full h-full flex flex-col">
-        <h1 className="pl-12 text-white font-semibold text-4xl my-6">
-          Sélectionner une service
-        </h1>
-        <div className="w-full h-full flex">
-          <div className="h-full pl-12 w-full grid grid-cols-3 lg:grid-cols-3 gap-2">
+          <div className="h-full w-full px-6 grid grid-cols-3 lg:grid-cols-3 gap-2">
             <Link
               to="/withdraw"
               className="relative border border-gray-100 bg-white rounded-tl-3xl w-full h-full flex flex-col justify-center items-center"
@@ -70,11 +65,7 @@ const HomeContent: React.FC = () => {
               </h2>
             </Link>
           </div>
-          <div className="w-2/5 h-full flex justify-center pb-16">
-            <div className="bg-[url(https://images.pexels.com/photos/7948726/pexels-photo-7948726.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)] bg-cover w-4/5 h-full rounded-3xl"></div>
-          </div>
-        </div>
-      </div>
+     
     );
 };
 
