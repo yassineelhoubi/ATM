@@ -1,0 +1,22 @@
+.btn {
+ font-size: 16px;
+ padding: 1em 3.3em;
+ transform: perspective(360px) rotateX(6deg);
+ color: rgb(41, 40, 40);
+ font-weight: 900;
+ border: none;
+ border-radius: 5px;
+ background: linear-gradient(0deg, #bdc6f5 0%, #ebeff5 100%);
+ box-shadow: rgba(63,94,251,0.2) 0px 40px 29px 0px;
+ will-change: transform;
+ transition: all 0.3s;
+ border-bottom: 2px solid rgba(70,135,252,1);
+}
+
+.btn:hover {
+ transform: perspective(260px) rotateX(8deg) translateY(1px);
+}
+
+.btn:active {
+ transform: perspective(200px) rotateX(10deg) translateY(5px);
+}
