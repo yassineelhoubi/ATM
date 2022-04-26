@@ -1,1 +1,0 @@
-A folder to contains all root level routes.
