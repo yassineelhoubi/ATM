@@ -13,11 +13,13 @@ import Car from '../pages/Car';
 import Booking from '../pages/Booking';
 import MobileRecharge from '../pages/MobileRecharge';
 import React from 'react';
+import { Login } from '../pages/Login';
 const AppRouter: React.FC = () => (
     <Router>
         <Routes>
             <Route path="/" />
-            <Route index element={<Home />} />
+            <Route index element={<Login />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/withdraw" element={<Withdraw />} />
             <Route path="/bills" element={<Bills />} />
             <Route path="/cash" element={<Cash />} />
