@@ -2,33 +2,19 @@
 import { join } from 'path';
 
 // Packages
-import { BrowserWindow, app, ipcMain, IpcMainEvent, Menu } from 'electron';
+import { BrowserWindow, app, ipcMain, IpcMainEvent } from 'electron';
 import isDev from 'electron-is-dev';
 
 const height = 600;
 const width = 800;
 
-var menu = Menu.buildFromTemplate([
-  {
-    label: 'Menu',
-    submenu: [
-      { label: 'Adjust Notification Value' },
-      { label: 'CoinMarketCap' },
-      { label: 'Exit' },
-    ],
-  },
-]);
-Menu.setApplicationMenu(menu);
-
 function createWindow() {
-  new Menu();
   // Create the browser window.
   const window = new BrowserWindow({
     width: width,
     height: height,
-    autoHideMenuBar: true,
+    frame: true,
     show: true,
-    frame:false,
     resizable: true,
     fullscreenable: true,
     webPreferences: {
