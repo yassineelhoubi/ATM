@@ -8,12 +8,12 @@ import {
 } from 'react-router-dom';
 import Withdraw from '../pages/Withdraw';
 import Bills from '../pages/Bills';
-import Cash from '../pages/Cash';
 import Car from '../pages/Car';
 import Booking from '../pages/Booking';
 import MobileRecharge from '../pages/MobileRecharge';
 import React from 'react';
 import { Login } from '../pages/Login';
+import { Balance } from '../pages';
 const AppRouter: React.FC = () => (
     <Router>
         <Routes>
@@ -22,7 +22,7 @@ const AppRouter: React.FC = () => (
             <Route path="/home" element={<Home />} />
             <Route path="/withdraw" element={<Withdraw />} />
             <Route path="/bills" element={<Bills />} />
-            <Route path="/cash" element={<Cash />} />
+            <Route path="/cash" element={<Balance />} />
             <Route path="/car" element={<Car />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/mobile" element={<MobileRecharge />} />

@@ -3,7 +3,7 @@ import { GiReturnArrow } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
 import { useFetch } from '../hook/useFetch';
 
-const Cash: React.FC = () => {
+const Balance: React.FC = () => {
 
   //@ts-ignore
   const userId = JSON.parse(localStorage.getItem('user'))._id;
@@ -14,7 +14,7 @@ const Cash: React.FC = () => {
       <div className="w-full flex justify-between">
         <span></span>
         <h1 className="text-3xl lg:text-5xl uppercase bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-violet-200 font-extrabold">
-          Votre Solde
+          Your Balance
         </h1>
         <Link to="/home">
           <GiReturnArrow className="text-3xl lg:text-5xl text-cyan-100 mr-10" />
@@ -31,4 +31,4 @@ const Cash: React.FC = () => {
   );
 };
 
-export default Cash;
+export { Balance };
