@@ -2,54 +2,68 @@ import React from 'react';
 import '../assets/css/custom.css';
 import { GiReturnArrow } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 
 const Withdraw: React.FC = () => {
+  const action = (balance: number) => {
+    const userId = JSON.parse(localStorage.getItem('user') as string)._id;
+    const data = {
+      balance: balance
+    };
+    axios.patch(`http://localhost:3030/user/${userId}/withdraw-balance`, data)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }
+
   return (
     <>
-
       <div className="w-full flex justify-between">
         <span></span>
         <h1 className="text-3xl lg:text-5xl uppercase bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-violet-200 font-extrabold">
-          Sélectionner Le Solde
+          Select the balance
         </h1>
-        <Link to="/">
+        <Link to="/home">
           <GiReturnArrow className="text-3xl lg:text-5xl text-cyan-100 mr-10" />
         </Link>
       </div>
       <div className="w-full h-5/6 flex">
         <div className="w-1/2 h-full rounded-3xl flex flex-col justify-around items-center">
-          <button className="w-4/5 btn h-1/6">
+          <button className="w-4/5 btn h-1/6" onClick={() => action(100)}>
             <span className="text-cyan-900 text-3xl lg:text-5xl font-extrabold">
-              2000DH
+              100DH
             </span>
           </button>
-          <button className="w-4/5 btn h-1/6 rounded-r-full">
+          <button className="w-4/5 btn h-1/6 rounded-r-full" onClick={() => action(200)}>
             <span className="text-cyan-900 text-3xl lg:text-5xl font-extrabold">
-              3000DH
+              200DH
             </span>
           </button>
-          <button className="w-4/5 btn h-1/6 rounded-r-full">
+          <button className="w-4/5 btn h-1/6 rounded-r-full" onClick={() => action(300)}>
             <span className="text-cyan-900 text-3xl lg:text-5xl font-extrabold">
-              4000DH
+              300DH
             </span>
           </button>
         </div>
         <div className="w-1/2 h-full rounded-3xl flex flex-col items-center justify-around">
-          <button className="w-4/5 btn h-1/6 rounded-l-full">
+          <button className="w-4/5 btn h-1/6 rounded-l-full" onClick={() => action(400)}>
             <span className="text-cyan-900 text-3xl lg:text-5xl font-extrabold">
-              5000DH
+              400DH
             </span>
           </button>
-          <button className="w-4/5 btn h-1/6 rounded-l-full">
+          <button className="w-4/5 btn h-1/6 rounded-l-full" onClick={() => action(500)}>
             <span className="text-cyan-900 text-3xl lg:text-5xl font-extrabold">
-              6000DH
+              500DH
             </span>
           </button>
           <button className="w-4/5 btn h-1/6 rounded-l-full">
             <span className="text-cyan-900 text-2xl lg:text-5xl font-extrabold">
-              Autre Choix
+              Other Choice
             </span>
           </button>
         </div>
@@ -58,4 +72,4 @@ const Withdraw: React.FC = () => {
   );
 };
 
-export default Withdraw;
+export { Withdraw }
