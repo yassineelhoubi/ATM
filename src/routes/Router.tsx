@@ -7,13 +7,12 @@ import {
     useLocation,
 } from 'react-router-dom';
 
-import Bills from '../pages/Bills';
 import Car from '../pages/Car';
 import Booking from '../pages/Booking';
 import MobileRecharge from '../pages/MobileRecharge';
 import React from 'react';
 import { Login } from '../pages/Login';
-import { Balance, Withdraw } from '../pages';
+import { Balance, Withdraw, Bills } from '../pages';
 const AppRouter: React.FC = () => (
     <Router>
         <Routes>
